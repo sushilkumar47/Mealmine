@@ -95,6 +95,54 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '700',
   },
+  input: {
+    height: 40,
+    marginBottom: 9,
+    marginTop:10,
+    backgroundColor: "#fff",
+    paddingTop:10,
+    borderRadius:20 ,
+    paddingHorizontal:20
+    
+
+    
+  },
+  last: {
+    height: 40,
+    marginBottom:20,
+    marginTop:10,
+    backgroundColor: "#fff",
+    paddingTop:10,
+    borderRadius:20 ,
+    paddingHorizontal:20
+
+    
+  },
+  
+    area:{
+    marginTop:200,
+    marginLeft:20,
+    marginRight:20,
+    
+   },
+    bold:{
+    fontSize:25,
+    marginLeft:110,
+    marginBottom:20,
+    color:"blue",
+    fontWeight:"900"
+
+   },
+    butan:{
+      marginTop: 30,
+      borderRadius: 60,
+      height: 45,
+      backgroundColor: 'blue',
+      justifyContent: 'center',
+      minWidth: 300,
+      
+
+   },
 });
 
 export default styles;

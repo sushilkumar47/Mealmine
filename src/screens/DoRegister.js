@@ -4,7 +4,7 @@ import Parse from "parse/react-native";
 import styles from "../Common/Styles";
 import { useNavigation } from "@react-navigation/core";
 
-export default function Login() {
+export default function DoRegister() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigation();
@@ -32,10 +32,9 @@ export default function Login() {
 
   return (
     <> 
-      <SafeAreaView  >    
+      <SafeAreaView style={styles.area} >    
       <ScrollView>
-      <View style={styles.area}>
-        <Text style={styles.bold}>LOGIN</Text>
+      <View><Text style={styles.bold}>REGISTER</Text></View>
       <TextInput
         style={styles.input}
         value={username}
@@ -50,26 +49,20 @@ export default function Login() {
         secureTextEntry
         onChangeText={(text) => setPassword(text)}
       />
-      
+      <TextInput
+        style={styles.input}
+        // onChangeText={(e) => setEmail(e.target.value)}
+        value={email}
+        placeholder={"Email Address"}
+      />
+      <TextInput 
+      style={styles.last}
+      value={Number}
+      placeholder={"phone Number"}
+      />
       <TouchableOpacity style={styles.butan} onPress={()=> navigation.replace("Login")}>
-      <Text style={styles.sendOtpButtonText}>LOGIN</Text>
+      <Text style={styles.sendOtpButtonText}>SIGN UP</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={{left:170,marginTop:7}} onPress={()=> navigation.replace("DoRegister")}>
-      <Text style={{color:'blue'}}>New User ? Sign Up!</Text>
-      
-      </TouchableOpacity>
-     
-      <Text style={{color:'blue',alignSelf:'center',marginTop:7}}>--------------------- OR ----------------------</Text>
-      
-
-      
-      <TouchableOpacity style={styles.butan} onPress={()=> navigation.replace("OtpLogin")}>
-      <Text style={{textAlign: 'center',
-    fontSize: 20,
-    color: '#fff',
-    fontWeight: '900',}}>LOGIN WITH OTP</Text>
-      </TouchableOpacity>
-      </View>
       </ScrollView>
       </SafeAreaView>
     </>
