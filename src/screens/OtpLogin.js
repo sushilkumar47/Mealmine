@@ -3,6 +3,7 @@ import PhoneInput from "react-native-phone-number-input";
 import { Text,View,TouchableOpacity } from 'react-native';
 import { useNavigation } from "@react-navigation/core";
 import { KeyboardAvoidingView,ScrollView,SafeAreaView } from 'react-native';
+// import styles from '../Common/Styles';
 import styles, {
     ACTIVE_CELL_BG_COLOR,
     CELL_BORDER_RADIUS,
@@ -21,8 +22,9 @@ export default function OtpLogin() {
    <View style={{alignSelf:'center',top:350,position:'absolute'}}>
   <KeyboardAvoidingView enabled behavior='height'>
     <ScrollView>
+      <Text style={styles.OtpLOginText} >Login With OTP</Text>
     <PhoneInput
-          containerStyle={{width:300,borderRadius:10,alignSelf: 'center', marginTop: 30,height:62 }}
+          containerStyle={{width:300,borderRadius:10,alignSelf: 'center',marginBottom:20 , marginTop: 30,height:62 }}
           defaultValue={value}
           defaultCode="IN"
           layout="first"
@@ -42,7 +44,7 @@ export default function OtpLogin() {
           withShadow
           autoFocus
         />
-        <TouchableOpacity style={styles.sendOtp} onPress={()=> navigation.replace("DoRegister")}>
+        <TouchableOpacity style={styles.butan} onPress={()=> navigation.replace("DoRegister")}>
         <Text style={styles.sendOtpButtonText}>SEND OTP</Text>
       </TouchableOpacity>
         </ScrollView>

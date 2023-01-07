@@ -20,7 +20,6 @@
     "react-native-animated-splash-screen": "^2.0.5",
     "react-native-confirmation-code-field": "^7.3.1",
     "react-native-gesture-handler": "^2.8.0",
-    "react-native-image-crop-picker": "^0.39.0",
     "react-native-modal": "^13.0.1",
     "react-native-onboarding-swiper": "^1.2.0",
     "react-native-phone-number-input": "^2.1.0",

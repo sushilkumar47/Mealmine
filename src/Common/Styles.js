@@ -133,8 +133,16 @@ const styles = StyleSheet.create({
     fontWeight:"900"
 
    },
+   OtpLOginText:{
+    fontSize:25,
+    marginLeft:60,
+    marginBottom:20,
+    color:"blue",
+    fontWeight:"900"
+
+   },
     butan:{
-      marginTop: 30,
+      marginTop: 8,
       borderRadius: 60,
       height: 45,
       backgroundColor: 'blue',
