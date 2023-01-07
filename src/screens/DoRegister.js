@@ -2,7 +2,7 @@ import React, { FC, ReactElement, useState } from "react";
 import { MESSAGE,showMessage,Text,TextInput , SafeAreaView,ScrollView, View,TouchableOpacity} from "react-native";
 import styles from "../Common/Styles";
 import { useNavigation } from "@react-navigation/core";
-import { Value } from "react-native-reanimated";
+// import { Value } from "react-native-reanimated";
 
 export default function DoRegister() {
   const [name, setname] = useState("");

@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     fontSize:25,
     marginLeft:110,
     marginBottom:20,
-    color:"blue",
+    color:"rgb(239, 79, 95)",
     fontWeight:"900"
 
    },
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     fontSize:25,
     marginLeft:60,
     marginBottom:20,
-    color:"blue",
+    color:"rgb(239, 79, 95)",
     fontWeight:"900"
 
    },
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
       marginTop: 8,
       borderRadius: 60,
       height: 45,
-      backgroundColor: 'blue',
+      backgroundColor: '#fc8019',
       justifyContent: 'center',
       minWidth: 300,
       
