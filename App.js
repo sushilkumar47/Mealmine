@@ -22,7 +22,8 @@ import Login from './src/screens/Login';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import OnBoarding from './src/screens/Onboarding';
-
+import DoRegister from './src/screens/DoRegister';
+import OtpLogin from  './src/screens/OtpLogin';
 const Stack = createNativeStackNavigator();
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
@@ -41,11 +42,21 @@ const App: () => Node = () => {
             name="Onboarding"
             component={OnBoarding}
           />
-
+           <Stack.Screen
+            options={{headerShown: false}}
+            name="DoRegister"
+            component={DoRegister}
+          />
+          
           <Stack.Screen
             options={{headerShown: false}}
             name="Login"
             component={Login}
+          />
+           <Stack.Screen
+            options={{headerShown: false}}
+            name="OtpLogin"
+            component={OtpLogin}
           />
           <Stack.Screen
             options={{headerShown: false}}

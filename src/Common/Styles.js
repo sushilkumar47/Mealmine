@@ -95,6 +95,62 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '700',
   },
+  input: {
+    height: 40,
+    marginBottom: 9,
+    marginTop:10,
+    backgroundColor: "#fff",
+    paddingTop:10,
+    borderRadius:20 ,
+    paddingHorizontal:20
+    
+
+    
+  },
+  last: {
+    height: 40,
+    marginBottom:20,
+    marginTop:10,
+    backgroundColor: "#fff",
+    paddingTop:10,
+    borderRadius:20 ,
+    paddingHorizontal:20
+
+    
+  },
+  
+    area:{
+    marginTop:200,
+    marginLeft:20,
+    marginRight:20,
+    
+   },
+    bold:{
+    fontSize:25,
+    marginLeft:110,
+    marginBottom:20,
+    color:"rgb(239, 79, 95)",
+    fontWeight:"900"
+
+   },
+   OtpLOginText:{
+    fontSize:25,
+    marginLeft:60,
+    marginBottom:20,
+    color:"rgb(239, 79, 95)",
+    fontWeight:"900"
+
+   },
+    butan:{
+      marginTop: 8,
+      borderRadius: 60,
+      height: 45,
+      backgroundColor: '#fc8019',
+      justifyContent: 'center',
+      minWidth: 300,
+      
+
+   },
 });
 
 export default styles;

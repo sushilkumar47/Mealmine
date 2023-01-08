@@ -1,54 +1,102 @@
-import React, { useState, }  from 'react'
-import PhoneInput from "react-native-phone-number-input";
-import { Text,View,TouchableOpacity } from 'react-native';
+import React, { FC, ReactElement, useState } from "react";
+import { Alert,Text, Button, StyleSheet, TextInput , SafeAreaView,email,ScrollView, View,TouchableOpacity} from "react-native";
+// import Parse from "parse/react-native";
+import styles from "../Common/Styles";
 import { useNavigation } from "@react-navigation/core";
-import { KeyboardAvoidingView,ScrollView,SafeAreaView } from 'react-native';
-import styles, {
-    ACTIVE_CELL_BG_COLOR,
-    CELL_BORDER_RADIUS,
-    CELL_SIZE,
-    DEFAULT_CELL_BG_COLOR,
-    NOT_EMPTY_CELL_BG_COLOR,
-  } from '../Common/Styles';
-  
+import { color, interpolate } from "react-native-reanimated";
+
 export default function Login() {
-    const navigation = useNavigation();
-    const [value, setValue] = useState("");
-    const [formattedValue, setFormattedValue] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const[PutUsername,setPutUser]=useState("");
+  const[PutUserPass,setPutUserPass]=useState("");
+  const navigation = useNavigation();
+
+  const checkvalidate = () => {
+      if(username==""){
+        setPutUser("Enter Your Username or Email")
+      }
+      else{
+        setPutUser("")
+      }
+      if(password==""){
+        setPutUserPass("Enter Your Username or Email")
+      }
+      else{
+        setPutUserPass("")
+      }
+      if(username!="" && password!=""){
+        navigation.replace("Login")
+      }
+  }
+
+  // const doUserRegistration = async function () {
+  //   // Note that these values come from state variables that we've declared before
+  //   const usernameValue = username;
+  //   const passwordValue = password;
+  //   // Since the signUp method returns a Promise, we need to call it using await
+  //   return await Parse.User.signUp(usernameValue, passwordValue)
+  //     .then((createdUser) => {
+  //       // Parse.User.signUp returns the already created ParseUser object if successful
+  //       Alert.alert(
+  //         "Success!",
+  //         `User ${createdUser.get("username")} was successfully created!`
+  //       );
+  //       return true;
+  //     })
+  //     .catch((error) => {
+  //       // signUp can fail if any parameter is blank or failed an uniqueness check on the server
+  //       Alert.alert("Error!", error.message);
+  //       return false;
+  //     });
+  // };
+  
+
   return (
-   <>
-   <SafeAreaView>
-   <View style={{alignSelf:'center',top:350,position:'absolute'}}>
-  <KeyboardAvoidingView enabled behavior='height'>
-    <ScrollView>
-    <PhoneInput
-          containerStyle={{width:300,borderRadius:10,alignSelf: 'center', marginTop: 30,height:62 }}
-          defaultValue={value}
-          defaultCode="IN"
-          layout="first"
-          onChangeText={(text) => {            
-            setValue(text);
-          }}
-          onChangeFormattedText={(text) => {
-            setFormattedValue(text);
-          }}
-          disableArrowIcon={true}
-          textContainerStyle={{borderRadius:10,backgroundColor:"#ffffff",paddingTop:0,height:62}}
-          codeTextStyle={{height:50,marginLeft:-10,marginTop:18,textAlignVertical:"center",fontSize:16,fontFamily:"Avenir",color:"#000000"}}
-          textInputProps={{maxLength:10}}
-          textInputStyle={{width:70,height:50,textAlignVertical:"center",marginTop:19,fontFamily:"Avenir",color:"#000000",fontSize:16}}
-          countryPickerProps={{ visible:false, countryCodes:["IN"], withAlphaFilter: true  }}
-          countryPickerButtonStyle={{marginLeft:20,height:28,marginTop:16,textAlignVertical:"center",width:30}}
-          withShadow
-          autoFocus
-        />
-        <TouchableOpacity style={styles.sendOtp} onPress={()=> navigation.replace("otp")}>
-        <Text style={styles.sendOtpButtonText}>SEND OTP</Text>
+    <> 
+      <SafeAreaView  >    
+      <ScrollView>
+      <View style={styles.area}>
+        <Text style={styles.bold}>LOGIN</Text>
+      <TextInput
+        style={styles.input}
+        value={username}
+        placeholder={"Username"}
+        onChangeText={value => {setUsername(value); setPutUser("");}}
+        autoCapitalize={"none"}
+      />
+      <Text style={{color:"red" , marginLeft:14}}>{PutUsername}</Text>
+      <TextInput
+        style={styles.input}
+        value={password}
+        placeholder={"Password"}
+        secureTextEntry
+        onChangeText={value => {setPassword(value); setPutUserPass("")}}/>
+        <Text style={{color:"red" , marginLeft:14}}>{PutUserPass}</Text>
+      
+      <TouchableOpacity style={styles.butan} 
+      // onPress={()=> navigation.replace("Login")
+      onPress={()=>{checkvalidate()}}>
+      <Text style={styles.sendOtpButtonText}>LOGIN</Text>
       </TouchableOpacity>
-        </ScrollView>
-        </KeyboardAvoidingView>
-          </View>
-          </SafeAreaView>
-   </>
-  )
-}
+      <TouchableOpacity style={{left:170,marginTop:7}} onPress={()=> navigation.replace("DoRegister")}>
+      <Text style={{color:'blue'}}>New User ? Sign Up!</Text>
+      
+      </TouchableOpacity>
+     
+      <Text style={{color:'blue',alignSelf:'center',marginTop:7}}>--------------------- OR ----------------------</Text>
+      
+
+      
+      <TouchableOpacity style={styles.butan} onPress={()=> navigation.replace("OtpLogin")}>
+      <Text style={{textAlign: 'center',
+    fontSize: 20,
+    color: '#fff',
+    fontWeight: '900',}}>LOGIN WITH OTP</Text>
+      </TouchableOpacity>
+      </View>
+      </ScrollView>
+      </SafeAreaView>
+    </>
+  );
+};

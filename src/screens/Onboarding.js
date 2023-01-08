@@ -50,21 +50,21 @@ export default function OnBoarding() {
   pages={[
     {
 
-      backgroundColor: '#a6e4d0',
+      backgroundColor: '#FFFFFF',
       image: <Image style={styles.imageStyles} source={require('../resources/thali.jpg')} />,
       title: 'good food',
       subtitle: 'Done with React Native Onboarding Swiper',
     },
     {
 
-      backgroundColor: '#fdeb93',
+      backgroundColor: '#FFFFFF',
       image: <Image style={styles.imageStyles} source={require('../resources/paratha.jpg')} />,
       title: 'quality food',
       subtitle: 'Done with React Native Onboarding Swiper',
     },
     {
 
-      backgroundColor: '#e9bcbe',
+      backgroundColor: '#FFFFFF',
       image: <Image style={styles.imageStyles} source={require('../resources/surmai.jpg')} />,
       title: 'love and joy',
       subtitle: 'Done with React Native Onboarding Swiper',
