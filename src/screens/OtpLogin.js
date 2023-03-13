@@ -1,6 +1,6 @@
-import React, { useState, }  from 'react'
+import React, { useState,useEffect }  from 'react'
 import PhoneInput from "react-native-phone-number-input";
-import { Text,View,TouchableOpacity } from 'react-native';
+import { Text,View,TouchableOpacity,BackHandler,Alert } from 'react-native';
 import { useNavigation } from "@react-navigation/core";
 import { KeyboardAvoidingView,ScrollView,SafeAreaView } from 'react-native';
 // import styles from '../Common/Styles';
@@ -13,9 +13,46 @@ import styles, {
   } from '../Common/Styles';
   
 export default function OtpLogin() {
+
     const navigation = useNavigation();
     const [value, setValue] = useState("");
     const [formattedValue, setFormattedValue] = useState("");
+
+    constructor(){
+      super();           
+      this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+}
+
+ componentWillMount() {
+     BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+ }
+
+ componentWillUnmount() {
+     BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+ }
+
+ handleBackButtonClick() {
+     //this.props.navigation.goBack(null);
+     BackHandler.exitApp();
+     return true;
+ }
+
+ handleBackButtonClick() {
+     return true;   // when back button don't need to go back 
+ }
+
+       
+    function handleBackButtonClick() {
+      navigation.goBack();
+      return true;
+    }
+  
+    useEffect(() => {
+      BackHandler.addEventListener('hardwareBackPress', handleBackButtonClick);
+      return () => {
+        BackHandler.removeEventListener('hardwareBackPress', handleBackButtonClick);
+      };
+    }, []);
   return (
    <>
    <SafeAreaView>
@@ -44,7 +81,7 @@ export default function OtpLogin() {
           withShadow
           autoFocus
         />
-        <TouchableOpacity style={styles.butan} onPress={()=> navigation.replace("DoRegister")}>
+        <TouchableOpacity style={styles.butan} onPress={()=> navigation.replace("ProfileMess")}>
         <Text style={styles.sendOtpButtonText}>SEND OTP</Text>
       </TouchableOpacity>
         </ScrollView>

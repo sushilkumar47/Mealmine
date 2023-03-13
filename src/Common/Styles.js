@@ -147,10 +147,57 @@ const styles = StyleSheet.create({
       height: 45,
       backgroundColor: '#fc8019',
       justifyContent: 'center',
-      minWidth: 300,
-      
+      minWidth: 300,   
 
    },
+   imageStyles:{
+    width:300,
+    height:300,
+    borderRadius:400,
+   },
+   checkmenu:{
+    marginTop: 8,
+      borderRadius: 20,
+      marginLeft:30,
+      marginRight:30,
+      marginTop:50,
+      height: 60,
+      shadowColor:'black',
+      elevation: 1,
+      backgroundColor: '#FAF9F6',
+      justifyContent: 'center',
+      minWidth: 200,
+
+   },
+   checkmenu2:{
+      borderRadius: 20,
+      marginLeft:30,
+      marginRight:30,
+      marginTop:20,
+      height: 60,
+      shadowColor:'black',
+      elevation: 1,
+      backgroundColor: '#FAF9F6',
+      justifyContent: 'center',
+      minWidth: 200, },
+    backButton:{
+      borderRadius: 90,
+      marginLeft:10,
+      marginRight:600,
+      marginTop:64,
+      height: 40,
+      shadowColor:'black',
+      elevation: 1,
+      backgroundColor: '#7DF9FF',
+      justifyContent: 'center',
+      minWidth: 90, },
+
+    checkmenuText:{
+      textAlign: 'center',
+      fontSize: 20,
+      color: 'black',
+      fontWeight: '700'
+      }
 });
 
 export default styles;

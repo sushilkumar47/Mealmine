@@ -3,19 +3,13 @@ import { Text, Image, StyleSheet,TouchableOpacity, View } from 'react-native'
 import Onboarding from 'react-native-onboarding-swiper'
 import { useRef } from 'react'
 import { useNavigation } from "@react-navigation/core";
+import styles from '../Common/Styles';
 
 
 export default function OnBoarding() {
      const navigation = useNavigation();
     const onboardingRef = useRef<Onboarding>(null);
-
-    const styles = StyleSheet.create({
-      imageStyles:{
-        width:300,
-        height:300
-
-      }
-    })
+    
     const Done = ({...props}) => (
       <TouchableOpacity
       {...props}

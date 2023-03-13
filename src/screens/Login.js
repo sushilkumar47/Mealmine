@@ -1,5 +1,5 @@
 import React, { FC, ReactElement, useState } from "react";
-import { Alert,Text, Button, StyleSheet, TextInput , SafeAreaView,email,ScrollView, View,TouchableOpacity} from "react-native";
+import { Alert,Text, Button, StyleSheet, TextInput , SafeAreaView,BackHandler,ScrollView, View,TouchableOpacity} from "react-native";
 // import Parse from "parse/react-native";
 import styles from "../Common/Styles";
 import { useNavigation } from "@react-navigation/core";
@@ -12,6 +12,11 @@ export default function Login() {
   const[PutUserPass,setPutUserPass]=useState("");
   const navigation = useNavigation();
 
+  disableBackButton = () =>{
+    BackHandler.exitApp();
+    return false;
+  }
+
   const checkvalidate = () => {
       if(username==""){
         setPutUser("Enter Your Username or Email")
@@ -20,13 +25,13 @@ export default function Login() {
         setPutUser("")
       }
       if(password==""){
-        setPutUserPass("Enter Your Username or Email")
+        setPutUserPass("Enter The Password")
       }
       else{
         setPutUserPass("")
       }
       if(username!="" && password!=""){
-        navigation.replace("Login")
+        navigation.replace("ProfileMess")
       }
   }
 
